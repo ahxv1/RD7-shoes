@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 0.5s;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+nav{
+  background-color: #0c0009;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 999;
+  text-decoration: none;
+}
+
+.logo{
+  color: white;
+  font-size: 50px;
+  line-height: 79px;
+  margin-left: 20px;
+}
+
+#pannel{
+    font-size: 50px;
+    color: white;
+}
+
+nav ul{
+  float: right;
+  margin-right: 100px;
+}
+
+nav ul li{
+  display: inline-block;
+  margin: 0 3px;
+  line-height: 79px;
+}
+
+.start nav ul li a{
+    color: white;
+    text-transform: uppercase;
+    padding: 7px 9px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.start nav ul li a:hover{
+    background-color: #1b9bff;
+    transition: 0.5s;
+    color: white;
+}
+
+
+.checkbtn{
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media (max-width:952px){
+    .logo{
+        font-size: 40px;
+        padding: 0 0 0 30px;
+    }
+
+    .start ul li a{
+        font-size: 14px;
+        text-decoration: none;
+    }
+}
+
+
+@media (max-width:858px){
+    .checkbtn{
+        display: block;
+    }
+
+    .start nav ul{
+        position: fixed;
+        background-color: #141313;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        top: 70px;
+        left: -100%;
+        transition: 0.5s;
+    }
+
+    .start nav ul li{
+        display: block;
+        margin-top: 30px;
+    }
+    .start nav ul li a{
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .start nav ul li a:hover{
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+
+
+
+.main{
+    width: 100%;
+
+}
+
+.tit{
+    font-size: 85px;
+    color: white;
+    text-align: center;
+}
+
+.texts{
+    text-align: center;
+    background-color: #262626;
+    height: auto;
+    color: #0082e6;
+}
+
+.texts h3{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.about{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.info{
+    text-align: center;
+    margin: 70px;
+}
+
+.info i{
+    font-size: 70px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.info h3{
+    color: #0082e6;
+    margin-bottom: 15px;
+}
+
+.info p{
+    color: white;
+    font-size: 17px;
+    width: 200px;
+
+}
+
+/*slider*/
+
+.home .carousel-item{
+	min-height: 100vh;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+}
+.home .carousel-item:before{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: -1;
+}
+.home .carousel-item .container{
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+.home .carousel-item h2{
+	font-size: 80px;
+	color: #ffffff;
+	margin:0 0 10px;
+	opacity: 0;
+}
+.home .carousel-item p{
+	font-size: 30px;
+	margin:0;
+	color: #eeeeee;
+	opacity:0;
+}
+.home .carousel-item.active h2{
+	animation: fadeInLeft 0.5s ease forwards;
+}
+.home .carousel-item.active p{
+	animation: fadeInRight 0.5s ease forwards;
+}
+
+@keyframes fadeInLeft{
+	0%{
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+@keyframes fadeInRight{
+	0%{
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.home .carousel-controls{
+	position: absolute;
+	left: 50%;
+	bottom: 40px;
+	z-index: 10;
+	transform: translateX(-50%);
+}
+
+.home .carousel-indicators{
+	position: relative;
+	margin:0;
+}
+
+.home .carousel-indicators li{
+	height: 70px;
+	width: 70px;
+	margin:0 5px;
+	border-radius: 50%;
+	background-position: center;
+	background-size: cover;
+	border:3px solid transparent;
+	transition: all 0.3s ease;
+}
+.home .carousel-indicators li.active{
+	border-color: #ffffff;
+	transform: scale(1.2);
+}
+
+.home .carousel-control-next, 
+.home .carousel-control-prev{
+	height: 60px;
+	width: 60px;
+	opacity: 1;
+	z-index: 3;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+.home .carousel-control-next:hover, 
+.home .carousel-control-prev:hover{
+   box-shadow: 0 0 10px #ffffff;
+}
+.home .carousel-control-next img, 
+.home .carousel-control-prev img{
+   width: 30px;
+}
+.home .carousel-control-next{
+	right: -90px;
+}
+.home .carousel-control-prev{
+	left: -90px;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .home .carousel-control-next, 
+  .home .carousel-control-prev{
+  	display: none;
+  }
+  .home .carousel-indicators li{
+  	height: 60px;
+  	width: 60px;
+  }
+  .home .carousel-item h2{
+  	font-size: 45px;
+  }
+  .home .carousel-item p{
+  	font-size: 22px;
+  }
+}
+
+.items{
+    background-color: #636363;
+}
+
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: 0.5s;
+    padding: 50px;
+}
+
+.card:hover{
+    transform: scale(1.2);
+
+}
+
+.card{
+    align-items: center;
+    padding: 5px 5px;
+    border-radius: 5px;
+    margin: 30px;
+    height: 310px;
+}
+
+.cards img{
+    width: 230px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+.item_card .btn_card{
+    padding: 7px 7px;
+    border-radius: 5px;
+    background-color: #0082e6;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.right{
+    background-color: #a7a5a5;
+    height: auto;
+    padding: 10px;
+}
+
+.right1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item_rights{
+    background-color: black;
+    border-radius: 7px;
+    padding: 7px;
+    text-align: center;
+    margin: 50px;
+}
+
+
+.item_rights img{
+    width: 250px;
+    height: auto;
+}
+
+.item_rights h3{
+    color: #ffffff;
+}
+
+.item_rights p{
+    width: 240px;
+    color: #ffffff;
+}
+
+#dd{
+    height: 50px;
+}
+
+#dd a{
+    transition: all 0.4s;
+}
